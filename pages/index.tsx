@@ -1,18 +1,19 @@
-import type { NextPage } from "next";
+import AppLayout from "components/Layouts/AppLayout";
 
-import CustomHead from "components/CustomHead";
-
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50 ">
-      <CustomHead />
       <main className="container mx-auto">
         <section className="grid place-content-center">
-          <h1 className="text-purple-500 text-2xl">WorkSpace Template</h1>
+          <h1 className="text-2xl text-purple-500">WorkSpace Template</h1>
         </section>
       </main>
     </div>
   );
+};
+
+Home.getLayout = function getLayout(page: React.ReactNode) {
+  return <AppLayout title="Home">{page}</AppLayout>;
 };
 
 export default Home;
